@@ -1,0 +1,88 @@
+LUA pikuma
+
+---Lua es un lenguaje de tipo dinámico.
+--- Tipos de datos
+	---nill
+	--number
+	--string
+	--function
+	-- table
+
+***var = tipo_de_dato
+
+*** se puede concatenar con 2 puntos(..)
+print(“string” .. var)
+
+*** para incrementar variables lua no tiene +=.
+	var = var + 1
+
+*** Los condicionales no usan paréntesis de forma obligatoria.
+	if condicion then
+		x = y
+	elseif condicion_2 then
+		t = m
+	else
+		t = y
+	end
+
+*** operador de desigualdad es ~=
+
+*** convertir a minusculas una string
+	string.lower(“hola”) ---> regresa una string en minusculas.
+
+*** operadores logicos
+	---and
+	--- or
+	--- not
+
+***string manipulation. funciones que regresan una string
+	--- string.gsub(var,”letra”, “letra_new”) → sustituye todas las coincidencias.
+	--- string.sub(var,index_inicio,indexfinal) → da una substring
+	--- string.find(var,letra) → regresa la posicion
+
+*** guardar multiples strings
+	var = [[“hola”]]
+
+*** abrir y leer archivos
+file = io.open(arg[1], “r”) → abre archivo en modo read
+text = file:read(“all”) → guarda todo el archivo como string
+file:close()
+
+*** multiple asignaciones
+	x, y = 0, 0
+
+*** librerías populares:
+	-os
+	-math
+
+*** hacer números aleatorios
+	math.randomseed(os.time)
+	x = math.random(0,10)
+
+*** string patterns
+	string.find(var,”.”) busca cualquier letra
+	string.find(var,”%.”) busca el literal
+
+***ciclo for
+	for var=1, 10 do
+		TODO
+	end
+
+***while loop
+	while var<10 do
+		TODO
+	end
+
+*** variable scope
+	Todas las variables sin local son globales.
+
+*** input from keyboard
+	txt = io.read(“a”) → lee toda la entrada hasta el final de línea(control + d)
+	txt = io.read(“*a”) → igual que arriba
+	txt = io.read(“*n”) → lee un numero
+	txt =  io.read(“*l”) → lee toda la linea
+	txt =  io.read(4) → lee 4 caracteres
+	x,y =  io.read(4,6) ---> lee primero 4 caracteres, después 6.
+	x,y =  io.read(“*n”,”*n”) ---> lee 2 números
+
+	núm = tonumber(io.read()) → lee un número(forma recomendada)
