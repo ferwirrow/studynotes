@@ -30,6 +30,10 @@ print(“string” .. var)
 *** convertir a minusculas una string
 	string.lower(“hola”) ---> regresa una string en minusculas.
 
+*** convertir a mayusculas una string
+	string.upper(“hola”) ---> regresa una string.
+
+
 *** operadores logicos
 	---and
 	--- or
@@ -39,6 +43,7 @@ print(“string” .. var)
 	--- string.gsub(var,”letra”, “letra_new”) → sustituye todas las coincidencias.
 	--- string.sub(var,index_inicio,indexfinal) → da una substring
 	--- string.find(var,letra) → regresa la posicion
+	--- string.len(word) ---> regresa la longitud de la string
 
 *** guardar multiples strings
 	var = [[“hola”]]
@@ -63,6 +68,9 @@ file:close()
 	string.find(var,”.”) busca cualquier letra
 	string.find(var,”%.”) busca el literal
 
+
+
+
 ***ciclo for
 	for var=1, 10 do
 		TODO
@@ -86,3 +94,63 @@ file:close()
 	x,y =  io.read(“*n”,”*n”) ---> lee 2 números
 
 	núm = tonumber(io.read()) → lee un número(forma recomendada)
+
+*** loop repeat
+    -es el do while de lua
+        repeat
+            TODO...
+        until condicion
+
+*** funciones
+    -se escribe la palabra reservada functions y despues el nombre de la funcion
+
+    function name()
+        TODO...
+    end
+
+*** tables
+    --la unica estructura de datos que tambien se puede usar como diccionario.
+
+    name = {1,2,3}
+    name = {[key1] = val1, [key2] = val2}
+
+*** modificar una table
+    --- table.insert(tabla, x) ---> inserta x en la tabla
+    --- table.remove(tabla, i) ---> elimina elemento en la posicion i.
+    --- table.sort(tabla) ---> ordena la tabla
+    --- table.concat(tabla) ---> une los elementos como strings
+
+*** pares and ipars
+    --- sirve para recorrar una table
+
+    for x,y in pairs(tabla) do
+        TODO...
+    end
+
+    ---pairs regresa la llave y el valor asociado a la llave.
+    --- ipairs regresa el numero del indice del elemento y el valor del elemento.
+
+*** obtener elementos de una table
+    tabla[1] = "hola" ---> tambien funciona sin corchetes
+    tabla["key1"] = "hola"
+    tabla.key1 = "hola"
+
+*** matrices
+
+    matriz = { {1,2,3},{4,5,6} }
+
+    --- el primer indice es la fila y el segundo indice es la columna.
+
+*** convertir de un tipo de dato a otro
+
+    -tostring(n) --> regresa una cadena
+    -tonumber(string) ---> si no puede convertir regresa un nil
+
+*** io library
+    --- io.write("hello") --> no salto de linea ni espacion automatico como print con varios argumentos
+
+*** date and time
+    --- os.date() ---> regresa la fecha
+    --- os.time() ---> regresa marca de tiempo
+    --- os.difftime() ---> calcula la diferencia entre 2 tiempos
+    --- os.clock() ---> mide el cpu
