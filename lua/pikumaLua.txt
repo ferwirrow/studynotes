@@ -44,6 +44,7 @@ print(“string” .. var)
 	--- string.sub(var,index_inicio,indexfinal) → da una substring
 	--- string.find(var,letra) → regresa la posicion
 	--- string.len(word) ---> regresa la longitud de la string
+	--- string.gmatch(s,pattern) --> devuelve el texto que coincide con el patron, es una funcion iterador.
 
 *** guardar multiples strings
 	var = [[“hola”]]
@@ -154,3 +155,24 @@ file:close()
     --- os.time() ---> regresa marca de tiempo
     --- os.difftime() ---> calcula la diferencia entre 2 tiempos
     --- os.clock() ---> mide el cpu
+
+*** metatables
+
+    --- una metatable es una tabla especial que permite cambiar o extender el comportamiento por defecto de otras tablas.
+    --- setmetatable(v,meta) --> asigna v como metatabla de meta
+
+    --- __index == function(x) --> el metametodo puede ser una funcion o una table.
+
+    --- cuando una table es metatable de otra hereda los metodos sin contenerlos.
+
+    --- meta.__index = function(table,key) ---> asi se asigna un metametodo a una metatabla original.
+
+*** metametodos
+    --- __index
+    --- __newindex
+    --- __add
+    --- __sub
+    --- __mul
+    --- __concat
+    --- __call
+    --- __tostring
